@@ -1,5 +1,5 @@
 ## Description
-A CoinMarketCap-style market data aggregator written with TypeScript + [Nest](https://github.com/nestjs/nest) _(WIP)_
+A CoinMarketCap-style market data aggregator written in TypeScript + TypeORM + [Nest](https://github.com/nestjs/nest) _(WIP)_
 
 ## Why NestJS?
 "In recent years, thanks to Node.js, JavaScript has become the “lingua franca” of the web for both front and backend applications. This has given rise to awesome projects like Angular, React and Vue, which improve developer productivity and enable the creation of fast, testable, and extensible frontend applications. However, while plenty of superb libraries, helpers, and tools exist for Node (and server-side JavaScript), none of them effectively solve the main problem of - Architecture.
