@@ -29,7 +29,8 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+## Testing
+TODO: use [testcontainers](https://node.testcontainers.org/) for faster e2e tests  
 
 ```bash
 # unit tests
