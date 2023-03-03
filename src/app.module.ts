@@ -1,18 +1,18 @@
 import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
+import { ConfigModule } from '@nestjs/config';
+import { DatabaseModule } from './modules/database/database.module';
+
 
 @Module({
     imports: [
-        TypeOrmModule.forRoot({
-            type: 'postgres',
-            host: 'localhost',
-            port: 5432,
-            username: 'root',
-            password: 'root',
-            database: 'cryptomarketcap',
-            entities: [],
-            synchronize: false, // run local migration files instead for any table
+        ConfigModule.forRoot({
+            cache: true,
+            isGlobal: true
         }),
+        DatabaseModule
     ],
+    controllers: [],
+    providers: [],
 })
 export class AppModule {}
+
