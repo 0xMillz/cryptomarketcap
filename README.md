@@ -21,7 +21,7 @@ $ npm i
 ```bash
 $ docker compose up postgres
 
-# Create/update postgres tables
+# Create/update postgres tables if needed
 $ npm run typeorm:run-migrations
 
 # watch mode
@@ -56,5 +56,19 @@ http://localhost:3000/api/v1/assets
 
 # Get a single asset 
 http://localhost:3000/api/v1/assets/:id
+```
+
+
+## Database Migrations  
+1. Make sure your new/updated Enitity is imported into the entities array in `typeOrm.config.ts`  
+2. Generate the migration file:
+```bash
+$ npm run typeorm:generate-migration --name=<migration-name-here>
+```
+3. Review the generated SQL in the newly created migration file in the `migrations` directory
+4. Import the migration into the migrations array in `typeOrm.config.ts`
+5. Run:
+```bash
+$ npm run typeorm:run-migrations
 ```
 
