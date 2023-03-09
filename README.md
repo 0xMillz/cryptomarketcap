@@ -51,11 +51,11 @@ $ npm run test:cov
 # Landing page ("Hello Crypto!")
 http://localhost:3000/api/v1
 
-# Get all assets
-http://localhost:3000/api/v1/assets
+# Get all exchanges
+http://localhost:3000/api/v1/exchanges
 
-# Get a single asset 
-http://localhost:3000/api/v1/assets/:id
+# Get a single exchange by slug
+http://localhost:3000/api/v1/exchanges/:slug
 ```
 
 
