@@ -24,7 +24,7 @@ export const databaseConnections = [
                 autoLoadModels: true,
                 type: 'postgres',
                 entities: [],
-                synchronize: false, // run local migration files instead for any table even when devving
+                synchronize: false, // always run migrations for db changes
             };
         },
     }),

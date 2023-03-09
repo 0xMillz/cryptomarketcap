@@ -16,16 +16,18 @@ NestJS also works better with TypeORM for tasks like automated migrations and da
 $ npm i
 ```
 
-## Running the app
+## Running the API locally
 
 ```bash
-# development
-$ docker compose up postgres && npm run start
+$ docker compose up postgres
+
+# Create/update postgres tables
+$ npm run typeorm:run-migrations
 
 # watch mode
-$ docker compose up postgres && npm run start:dev
+$ npm run start:dev
 
-# production mode
+# OR production mode
 $ npm run start:prod
 ```
 
