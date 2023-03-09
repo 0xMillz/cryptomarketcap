@@ -6,12 +6,15 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "es2017",
+    "target": "es2019",
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
     "strictNullChecks": false,
-    "skipLibCheck": true
-  }
+    "skipLibCheck": true,
+    "alwaysStrict": true,
+    "noImplicitAny": true
+  },
+  "exclude": ["node_modules", "dist"]
 }
