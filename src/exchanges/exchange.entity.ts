@@ -5,7 +5,9 @@ export enum ExchangeStatus {
     DISABLED = 'disabled',
 }
 
-@Entity()
+@Entity({
+    name: 'exchanges',
+})
 class Exchange {
     @PrimaryGeneratedColumn("uuid")
     public id: string;
@@ -30,10 +32,10 @@ class Exchange {
     @Column()
     public socket: boolean;
 
-    @CreateDateColumn({ type: "timestamp", default: () => "CURRENT_TIMESTAMP(6)" })
+    @CreateDateColumn({ type: "timestamp with time zone", default: () => "CURRENT_TIMESTAMP(6)" })
     public createdAt: Date;
 
-    @UpdateDateColumn({ type: "timestamp", default: () => "CURRENT_TIMESTAMP(6)", onUpdate: "CURRENT_TIMESTAMP(6)" })
+    @UpdateDateColumn({ type: "timestamp with time zone", default: () => "CURRENT_TIMESTAMP(6)", onUpdate: "CURRENT_TIMESTAMP(6)" })
     public updatedAt: Date;
 }
 

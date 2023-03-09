@@ -21,7 +21,7 @@ export const databaseConnections = [
                 host,
                 port: +port,
                 dialect,
-                autoLoadModels: true,
+                autoLoadEntities: true,
                 type: 'postgres',
                 entities: [],
                 synchronize: false, // always run migrations for db changes
