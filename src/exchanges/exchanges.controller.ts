@@ -1,13 +1,9 @@
-import {
-    Controller,
-    Get
-} from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
 import ExchangesService from './exchanges.service';
 
 @Controller('exchanges')
 export default class ExchangesController {
-    constructor(private readonly postsService: ExchangesService) {
-    }
+    constructor(private readonly postsService: ExchangesService) {}
 
     @Get()
     async getAllExchanges() {

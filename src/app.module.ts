@@ -4,8 +4,6 @@ import { ConfigModule } from '@nestjs/config';
 import { DatabaseModule } from './database/database.module';
 import * as Joi from '@hapi/joi';
 import ExchangesModule from './exchanges/exchanges.module';
-import ExchangesController from './exchanges/exchanges.controller';
-
 
 @Module({
     imports: [
@@ -20,13 +18,12 @@ import ExchangesController from './exchanges/exchanges.controller';
                 POSTGRES_DIALECT: Joi.string().required(),
                 POSTGRES_DB: Joi.string().required(),
                 NODE_ENV: Joi.string().required(),
-            })
+            }),
         }),
         DatabaseModule,
-        ExchangesModule
+        ExchangesModule,
     ],
     controllers: [AppController],
     providers: [],
 })
 export class AppModule {}
-

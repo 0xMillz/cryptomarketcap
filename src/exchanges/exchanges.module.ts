@@ -5,9 +5,7 @@ import Exchange from './exchange.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
-    imports: [
-        TypeOrmModule.forFeature([Exchange])
-    ],
+    imports: [TypeOrmModule.forFeature([Exchange])],
     controllers: [ExchangesController],
     providers: [ExchangesService],
 })

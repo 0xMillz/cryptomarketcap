@@ -1,4 +1,10 @@
-import { Column, Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import {
+    Column,
+    Entity,
+    PrimaryGeneratedColumn,
+    CreateDateColumn,
+    UpdateDateColumn,
+} from 'typeorm';
 
 export enum ExchangeStatus {
     ENABLED = 'enabled',
@@ -9,7 +15,7 @@ export enum ExchangeStatus {
     name: 'exchanges',
 })
 class Exchange {
-    @PrimaryGeneratedColumn("uuid")
+    @PrimaryGeneratedColumn('uuid')
     public id: string;
 
     @Column()
@@ -19,7 +25,7 @@ class Exchange {
     public website: string;
 
     @Column({
-        unique: true
+        unique: true,
     })
     public slug: string;
 
@@ -32,10 +38,14 @@ class Exchange {
     @Column()
     public socket: boolean;
 
-    @CreateDateColumn({ type: "timestamp with time zone", default: () => "CURRENT_TIMESTAMP(6)" })
+    @CreateDateColumn({ type: 'timestamp with time zone', default: () => 'CURRENT_TIMESTAMP(6)' })
     public createdAt: Date;
 
-    @UpdateDateColumn({ type: "timestamp with time zone", default: () => "CURRENT_TIMESTAMP(6)", onUpdate: "CURRENT_TIMESTAMP(6)" })
+    @UpdateDateColumn({
+        type: 'timestamp with time zone',
+        default: () => 'CURRENT_TIMESTAMP(6)',
+        onUpdate: 'CURRENT_TIMESTAMP(6)',
+    })
     public updatedAt: Date;
 }
 
