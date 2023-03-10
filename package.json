@@ -74,8 +74,5 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
-  },
-  "lint-staged": {
-    "*.{js,ts,json,css,md,yml,yaml}": "prettier --write"
   }
 }
