@@ -77,8 +77,8 @@ $ npm run typeorm:run-migrations
 ```bash
 $ npm run typeorm -- migration:create ./src/database/migrations/Seed<name of what data you are seeding>
 ```
-2. Use TypeORM's QueryRunner to insert data into existing table(s), example: src/database/migrations/1678403176953-SeedKrakenExchange.ts
-4. Import the migration into the migrations array in `typeOrm.config.ts`
+2. Use TypeORM's QueryRunner to insert data into existing table(s), example: `./src/database/migrations/1678403176953-SeedKrakenExchange.ts`
+4. Import the migration into the migrations array in `./src/database/migrations/index.ts`
 5. Run:
 ```bash
 $ npm run typeorm:run-migrations

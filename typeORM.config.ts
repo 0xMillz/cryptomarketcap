@@ -2,9 +2,7 @@ import { DataSource } from 'typeorm';
 import { ConfigService } from '@nestjs/config';
 import { config } from 'dotenv';
 import ExchangeEntity from './src/exchanges/exchange.entity';
-import { CreateExchanges1678402403641 } from './src/database/migrations/1678402403641-CreateExchanges';
-import { SeedKrakenExchange1678403176953 } from './src/database/migrations/1678403176953-SeedKrakenExchange';
-import { SeedBinanceUSExchange1678417995959 } from "./src/database/migrations/1678417995959-SeedBinanceUSExchange";
+import migrations from "./src/database/migrations";
 
 config();
 
@@ -18,6 +16,6 @@ export default new DataSource({
     password: configService.get('POSTGRES_PASSWORD'),
     database: configService.get('POSTGRES_DB'),
     entities: [ExchangeEntity],
-    migrations: [CreateExchanges1678402403641, SeedKrakenExchange1678403176953, SeedBinanceUSExchange1678417995959],
-    synchronize: false
+    migrations: migrations,
+    synchronize: false,
 });

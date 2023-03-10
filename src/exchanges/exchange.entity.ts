@@ -25,6 +25,11 @@ class Exchange {
     public website: string;
 
     @Column({
+        nullable: true
+    })
+    public twitterUrl: string;
+
+    @Column({
         unique: true,
     })
     public slug: string;
