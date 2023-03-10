@@ -1,10 +1,6 @@
 import { IsString } from 'class-validator';
 
-class FindOneParams
-{
-
-
-
+class FindOneParams {
     @IsString()
     slug: string;
 }

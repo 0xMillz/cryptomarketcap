@@ -25,7 +25,7 @@ class Exchange {
     public website: string;
 
     @Column({
-        nullable: true
+        nullable: true,
     })
     public twitterUrl: string;
 
