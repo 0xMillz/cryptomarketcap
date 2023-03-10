@@ -3,6 +3,8 @@ import { AppController } from './app.controller';
 import { ConfigModule } from '@nestjs/config';
 import { DatabaseModule } from './database/database.module';
 import * as Joi from '@hapi/joi';
+import ExchangesModule from './exchanges/exchanges.module';
+import ExchangesController from './exchanges/exchanges.controller';
 
 
 @Module({
@@ -20,7 +22,8 @@ import * as Joi from '@hapi/joi';
                 NODE_ENV: Joi.string().required(),
             })
         }),
-        DatabaseModule
+        DatabaseModule,
+        ExchangesModule
     ],
     controllers: [AppController],
     providers: [],
