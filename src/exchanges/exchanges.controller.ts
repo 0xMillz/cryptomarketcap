@@ -1,6 +1,6 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import ExchangesService from './exchanges.service';
-import FindOneParams from "./utils/findOneParams";
+import FindOneParams from './utils/findOneParams';
 
 @Controller('exchanges')
 export default class ExchangesController {

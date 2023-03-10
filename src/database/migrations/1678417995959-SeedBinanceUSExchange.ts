@@ -1,8 +1,8 @@
-import { MigrationInterface, QueryRunner } from "typeorm"
-import Exchange, { ExchangeStatus } from "../../exchanges/exchange.entity";
+import { MigrationInterface, QueryRunner } from 'typeorm';
+import Exchange, { ExchangeStatus } from '../../exchanges/exchange.entity';
 
 export class SeedBinanceUSExchange1678417995959 implements MigrationInterface {
-    name = 'SeedBinanceUSExchange1678417995959'
+    name = 'SeedBinanceUSExchange1678417995959';
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.manager.save(
@@ -20,5 +20,4 @@ export class SeedBinanceUSExchange1678417995959 implements MigrationInterface {
     public async down(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.query(`DELETE FROM exchanges WHERE slug = 'binance-us'`);
     }
-
 }
