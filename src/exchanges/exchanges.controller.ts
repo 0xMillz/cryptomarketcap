@@ -8,11 +8,11 @@ export default class ExchangesController {
 
     @Get()
     async getAllExchanges() {
-        return this.postsService.getAllExchanges();
+        return this.postsService.getAll();
     }
 
     @Get(':slug')
     async getOneExchange(@Param() { slug }: FindOneParams) {
-        return this.postsService.getOneExchange(slug);
+        return this.postsService.getOneBySlug(slug);
     }
 }
