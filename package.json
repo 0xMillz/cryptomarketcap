@@ -76,6 +76,6 @@
         "testEnvironment": "node"
     },
     "lint-staged": {
-        "*.{js,ts,json,css,md,yml,yaml}": "prettier --write"
+        "*.{js,ts,json,css,md,yml,yaml}": "npm run format"
     }
 }
