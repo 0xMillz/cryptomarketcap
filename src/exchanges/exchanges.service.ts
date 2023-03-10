@@ -1,4 +1,4 @@
-import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { FindManyOptions, Repository } from 'typeorm';
 import Exchange, { ExchangeStatus } from './exchange.entity';
@@ -20,10 +20,7 @@ export default class ExchangesService {
         if (exchange) {
             return exchange;
         }
-        throw new HttpException(
-          'Exchange with this slug does not exist',
-          HttpStatus.NOT_FOUND,
-        );
+        throw new HttpException('Exchange with this slug does not exist', HttpStatus.NOT_FOUND);
     }
 
     async getAll(): Promise<Exchange[]> {

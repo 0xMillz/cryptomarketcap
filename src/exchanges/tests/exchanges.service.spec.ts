@@ -14,33 +14,32 @@ describe('The ExchangesService', () => {
                 {
                     provide: getRepositoryToken(Exchange),
                     useValue: {
-                        findOne
-                    }
-                }
+                        findOne,
+                    },
+                },
             ],
-        })
-          .compile();
+        }).compile();
         exchangesService = await module.get(ExchangesService);
-    })
+    });
     describe('when getting a exchange by slug', () => {
         describe('and the exchange is found', () => {
             let exchange: Exchange;
             beforeEach(() => {
                 exchange = new Exchange();
                 findOne.mockReturnValue(Promise.resolve(exchange));
-            })
+            });
             it('should return the exchange', async () => {
                 const fetchedExchange = await exchangesService.getOneBySlug('kraken');
                 expect(fetchedExchange).toEqual(exchange);
-            })
-        })
+            });
+        });
         describe('and the exchange is not found', () => {
             beforeEach(() => {
                 findOne.mockReturnValue(null);
-            })
+            });
             it('should throw an error', async () => {
                 await expect(exchangesService.getOneBySlug('mtgox')).rejects.toThrow();
-            })
-        })
-    })
+            });
+        });
+    });
 });
