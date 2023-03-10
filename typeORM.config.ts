@@ -16,6 +16,6 @@ export default new DataSource({
     password: configService.get('POSTGRES_PASSWORD'),
     database: configService.get('POSTGRES_DB'),
     entities: [ExchangeEntity],
-    migrations: migrations,
+    migrations,
     synchronize: false,
 });
