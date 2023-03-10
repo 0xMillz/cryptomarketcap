@@ -22,4 +22,13 @@ export default class ExchangesService {
             },
         });
     }
+
+    async getOneExchange(slug: string): Promise<Exchange> {
+        return this.postsRepository.findOne({
+            where: {
+                slug,
+                status: ExchangeStatus.ENABLED,
+            },
+        });
+    }
 }

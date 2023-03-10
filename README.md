@@ -60,12 +60,24 @@ http://localhost:3000/api/v1/exchanges/:slug
 
 
 ## Database Migrations  
-1. Make sure your new/updated Enitity is imported into the entities array in `typeOrm.config.ts`  
+1. Make sure your new/updated Entity is imported into the entities array in `typeOrm.config.ts`  
 2. Generate the migration file:
 ```bash
 $ npm run typeorm:generate-migration --name=<migration-name-here>
 ```
 3. Review the generated SQL in the newly created migration file in the `migrations` directory
+4. Import the migration into the migrations array in `typeOrm.config.ts`
+5. Run:
+```bash
+$ npm run typeorm:run-migrations
+```
+
+## Database Seeding
+1. Generate a generic migration (seeder) file:
+```bash
+$ npm run typeorm -- migration:create ./src/database/migrations/Seed<name of what data you are seeding>
+```
+2. Use TypeORM's QueryRunner to insert data into existing table(s), example: src/database/migrations/1678403176953-SeedKrakenExchange.ts
 4. Import the migration into the migrations array in `typeOrm.config.ts`
 5. Run:
 ```bash
