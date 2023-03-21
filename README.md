@@ -63,7 +63,7 @@ http://localhost:3000/api/v1/exchanges/:id
 
 ## Database Migrations
 
-1. Make sure your new/updated Entity is imported into the entities array in `typeOrm.config.ts`
+1. Make sure your new/updated Entity is imported into the entities array in `./src/database/entities/index.ts`
 2. Generate the migration file:
 
 ```bash
@@ -71,7 +71,7 @@ $ npm run typeorm:generate-migration --name=<migration-name-here>
 ```
 
 3. Review the generated SQL in the newly created migration file in the `migrations` directory
-4. Import the migration into the migrations array in `typeOrm.config.ts`
+4. Import the migration into the migrations array in `./src/database/migrations/index.ts`
 5. Run:
 
 ```bash
