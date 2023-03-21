@@ -57,8 +57,8 @@ http://localhost:3000/api/v1
 # Get all assets
 http://localhost:3000/api/v1/assets
 
-# Get a single exchange by slug
-http://localhost:3000/api/v1/exchanges/:slug # ex: bitcoin
+# Get a single asset by slug
+http://localhost:3000/api/v1/assets/:slug # ex: bitcoin
 
 # Get all exchanges
 http://localhost:3000/api/v1/exchanges
