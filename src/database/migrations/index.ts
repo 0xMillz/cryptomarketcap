@@ -4,6 +4,7 @@ import { SeedBinanceUSExchange1678417995959 } from './1678417995959-SeedBinanceU
 import { CreateTwitterUrlColumn1678422995981 } from './1678422995981-CreateTwitterUrlColumn';
 import { SeedExchangeTwitterUrls1678423218530 } from './1678423218530-SeedExchangeTwitterUrls';
 import { AddAssetsAndExchangeMarkets1679378884005 } from './1679378884005-AddAssetsAndExchangeMarkets';
+import { SeedAssets1679424065402 } from './1679424065402-SeedAssets';
 
 const migrations = [
     CreateExchanges1678402403641,
@@ -12,6 +13,7 @@ const migrations = [
     CreateTwitterUrlColumn1678422995981,
     SeedExchangeTwitterUrls1678423218530,
     AddAssetsAndExchangeMarkets1679378884005,
+    SeedAssets1679424065402,
 ];
 
 export default migrations;

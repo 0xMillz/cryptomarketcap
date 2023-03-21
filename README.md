@@ -54,11 +54,17 @@ $ npm run test:cov
 # Landing page ("Hello Crypto!")
 http://localhost:3000/api/v1
 
+# Get all assets
+http://localhost:3000/api/v1/assets
+
+# Get a single exchange by slug
+http://localhost:3000/api/v1/exchanges/:slug # ex: bitcoin
+
 # Get all exchanges
 http://localhost:3000/api/v1/exchanges
 
-# Get a single exchange by id
-http://localhost:3000/api/v1/exchanges/:id
+# Get a single exchange by slug
+http://localhost:3000/api/v1/exchanges/:slug # ex: kraken
 ```
 
 ## Database Migrations
