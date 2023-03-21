@@ -4,7 +4,7 @@ import {
     PrimaryGeneratedColumn,
     CreateDateColumn,
     UpdateDateColumn,
-    OneToMany,
+    ManyToOne,
 } from 'typeorm';
 import Exchange from '../exchanges/exchange.entity';
 import Asset from '../assets/asset.entity';
@@ -21,33 +21,28 @@ class ExchangeMarket {
     @PrimaryGeneratedColumn('uuid')
     public id: string;
 
-    @OneToMany(
-        type => Exchange,
+    @ManyToOne(
+        () => Exchange,
         exchange => exchange.id,
     )
-    public exchange_id: string;
+    public exchange: string;
 
-    @OneToMany(
-        type => Asset,
+    @ManyToOne(
+        () => Asset,
         asset => asset.id,
     )
-    public base_id: string;
+    public base: string;
 
-    @OneToMany(
-        type => Asset,
+    @ManyToOne(
+        () => Asset,
         asset => asset.id,
     )
-    public quote_id: string;
+    public quote: string;
 
     @Column({
         nullable: true,
     })
     public twitterUrl: string;
-
-    @Column({
-        unique: true,
-    })
-    public slug: string;
 
     @Column()
     public apiUri: string;
