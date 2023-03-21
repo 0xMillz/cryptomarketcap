@@ -3,7 +3,9 @@ import { AppController } from './app.controller';
 import { ConfigModule } from '@nestjs/config';
 import { DatabaseModule } from './database/database.module';
 import * as Joi from '@hapi/joi';
+import AssetsModule from './assets/assets.module';
 import ExchangesModule from './exchanges/exchanges.module';
+import ExchangeMarketsModule from './exchange-markets/exchange-markets.module';
 
 @Module({
     imports: [
@@ -20,8 +22,10 @@ import ExchangesModule from './exchanges/exchanges.module';
                 NODE_ENV: Joi.string().required(),
             }),
         }),
+        AssetsModule,
         DatabaseModule,
         ExchangesModule,
+        ExchangeMarketsModule,
     ],
     controllers: [AppController],
     providers: [],

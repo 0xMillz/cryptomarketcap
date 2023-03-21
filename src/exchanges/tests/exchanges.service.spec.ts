@@ -3,7 +3,7 @@ import { getRepositoryToken } from '@nestjs/typeorm';
 import Exchange from '../../exchanges/exchange.entity';
 import ExchangesService from '../../exchanges/exchanges.service';
 
-describe('The ExchangesService', () => {
+describe('The Exchanges Service', () => {
     let exchangesService: ExchangesService;
     let findOne: jest.Mock;
     beforeEach(async () => {

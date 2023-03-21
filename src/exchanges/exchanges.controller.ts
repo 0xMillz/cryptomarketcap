@@ -4,15 +4,15 @@ import FindOneParams from './utils/findOneParams';
 
 @Controller('exchanges')
 export default class ExchangesController {
-    constructor(private readonly postsService: ExchangesService) {}
+    constructor(private readonly exchangesService: ExchangesService) {}
 
     @Get()
     async getAllExchanges() {
-        return this.postsService.getAll();
+        return this.exchangesService.getAll();
     }
 
     @Get(':slug')
     async getOneExchange(@Param() { slug }: FindOneParams) {
-        return this.postsService.getOneBySlug(slug);
+        return this.exchangesService.getOneBySlug(slug);
     }
 }
