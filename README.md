@@ -39,13 +39,13 @@ TODO: use [testcontainers](https://node.testcontainers.org/) for faster e2e test
 
 ```bash
 # unit tests
-$ npm run test
+$ npm run e2e
 
 # e2e tests
-$ npm run test:e2e
+$ npm run e2e:e2e
 
-# test coverage
-$ npm run test:cov
+# e2e coverage
+$ npm run e2e:cov
 ```
 
 ## Endpoints
