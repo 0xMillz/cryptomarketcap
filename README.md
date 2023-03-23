@@ -35,13 +35,11 @@ $ npm run start:prod
 
 ## Testing
 
-TODO: use [testcontainers](https://node.testcontainers.org/) for faster e2e tests
-
 ```bash
 # unit tests
 $ npm run e2e
 
-# e2e tests
+# e2e tests (uses testcontainers to quickly spin up a throwaway postgres container)
 $ npm run e2e:e2e
 
 # e2e coverage
