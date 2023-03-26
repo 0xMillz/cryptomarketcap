@@ -1,22 +1,21 @@
+import path from 'path';
 import { Test } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
-import { PostgreSqlContainer } from 'testcontainers';
-import * as request from 'supertest';
-import { environment } from '../../src/environments/environment';
+import { DockerComposeEnvironment, StartedDockerComposeEnvironment, Wait } from 'testcontainers';
+import request from 'supertest';
 import { AppModule } from '../../src/app.module';
 
 describe('App (e2e)', () => {
+    let environment: StartedDockerComposeEnvironment;
     let app: INestApplication;
 
     beforeAll(async () => {
-        const pg = await new PostgreSqlContainer('postgres:14.1')
-            .withExposedPorts(5432)
-            .withDatabase('cryptomarketcap')
-            .withUsername('cryptomarketcapadmin')
-            .withPassword('password')
-            .start();
+        const composeFilePath = path.resolve(__dirname, '../../');
+        const composeFile = 'docker-compose.yml';
 
-        environment.postgresPort = pg.getMappedPort(5432);
+        environment = await new DockerComposeEnvironment(composeFilePath, composeFile)
+            .withWaitStrategy('postgres_1', Wait.forHealthCheck())
+            .up();
 
         const moduleFixture = await Test.createTestingModule({ imports: [AppModule] }).compile();
 
@@ -28,11 +27,16 @@ describe('App (e2e)', () => {
 
     afterAll(async () => {
         await app.close();
+        await environment.down();
     });
 
-    it('should return 200 GETting /api/v1', async () => {
+    it('should return status code 200 when GETting /api/v1', async () => {
         const response = await request(app.getHttpServer()).get('/api/v1');
-        // console.log('response', response)
         expect(response.status).toBe(200);
+    });
+
+    it('should return response text "Hello Crypto!" when GETting /api/v1 body', async () => {
+        const response = await request(app.getHttpServer()).get('/api/v1');
+        expect(response.text).toEqual('Hello Crypto!');
     });
 });

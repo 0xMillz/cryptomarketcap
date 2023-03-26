@@ -1,42 +1,19 @@
 version: '3.8'
 services:
-  api:
-    container_name: cryptomarketcap-api
-    build:
-      context: ./
-      target: ${NODE_ENV}
-    image: cryptomarketcap-api
-    links:
-      - postgres
-    volumes:
-      - .:/usr/src/app
-      - /src/node_modules
-    command: npm run start:dev
-    ports:
-      - '3000:3000'
-    depends_on:
-      - postgres
-    environment:
-      POSTGRES_HOST: postgres
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DIALECT: ${POSTGRES_DIALECT}
-      POSTGRES_DB: ${POSTGRES_DB}
-      NODE_ENV: ${NODE_ENV}
-  postgres:
-    image: postgres:14.1-alpine
-    hostname: postgres
-    restart: always
-    environment:
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DIALECT: ${POSTGRES_DIALECT}
-      POSTGRES_DB: ${POSTGRES_DB}
-      NODE_ENV: ${NODE_ENV}
-    ports:
-      - '5432:5432'
-    volumes:
-      - cryptomarketcap:/var/lib/postgresql/data
+    postgres:
+        image: postgres:14.1-alpine
+        hostname: postgres
+        restart: always
+        environment:
+            POSTGRES_USER: ${POSTGRES_USER}
+            POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+            POSTGRES_DIALECT: ${POSTGRES_DIALECT}
+            POSTGRES_DB: ${POSTGRES_DB}
+            NODE_ENV: ${NODE_ENV}
+        ports:
+            - '5432:5432'
+        volumes:
+            - cryptomarketcap:/var/lib/postgresql/data
 volumes:
-  cryptomarketcap:
-    driver: local
+    cryptomarketcap:
+        driver: local
