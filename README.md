@@ -37,13 +37,10 @@ $ npm run start:prod
 
 ```bash
 # unit tests
-$ npm run e2e
+$ npm run test
 
 # e2e tests (uses testcontainers to quickly spin up a throwaway postgres container)
-$ npm run e2e:e2e
-
-# e2e coverage
-$ npm run e2e:cov
+$ npm run test:e2e
 ```
 
 ## Endpoints
