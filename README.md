@@ -23,6 +23,7 @@ $ npm i
 
 ```bash
 $ docker compose up postgres
+
 # Create/update postgres tables if needed
 $ npm run typeorm:run-migrations
 
@@ -40,6 +41,7 @@ $ npm run start:prod
 $ npm run test
 
 # e2e tests (uses testcontainers to quickly spin up a throwaway postgres container)
+# make sure to start the Docker daemon first
 $ npm run test:e2e
 ```
 
