@@ -15,7 +15,8 @@
         "skipLibCheck": true,
         "alwaysStrict": true,
         "noImplicitAny": true,
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "allowJs": true
     },
     "exclude": ["node_modules", "dist"]
 }

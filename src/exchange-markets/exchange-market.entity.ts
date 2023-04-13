@@ -40,14 +40,6 @@ class ExchangeMarket {
     public quote: string;
 
     @Column({
-        nullable: true,
-    })
-    public twitterUrl: string;
-
-    @Column()
-    public apiUri: string;
-
-    @Column({
         default: ExchangeMarketStatus.DISABLED,
     })
     public status: ExchangeMarketStatus;

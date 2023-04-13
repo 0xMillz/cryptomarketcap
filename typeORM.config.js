@@ -8,7 +8,7 @@ config();
 
 const configService = new ConfigService();
 
-export default new DataSource({
+export const dataSourceOptions = {
     type: 'postgres',
     host: configService.get('POSTGRES_HOST'),
     port: configService.get('POSTGRES_PORT'),
@@ -18,4 +18,7 @@ export default new DataSource({
     entities,
     migrations,
     synchronize: false,
-});
+    driver: require('pg'),
+};
+// @ts-ignore
+export default new DataSource(dataSourceOptions);

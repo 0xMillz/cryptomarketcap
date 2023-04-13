@@ -7,6 +7,8 @@ import AssetsModule from './assets/assets.module';
 import ExchangesModule from './exchanges/exchanges.module';
 import ExchangeMarketsModule from './exchange-markets/exchange-markets.module';
 
+// @ts-ignore
+// @ts-ignore
 @Module({
     imports: [
         ConfigModule.forRoot({

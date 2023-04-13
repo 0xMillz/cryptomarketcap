@@ -12,7 +12,7 @@ export const databaseConnections = [
             const database = config.get('POSTGRES_DB');
             const dialect = config.get('POSTGRES_DIALECT');
 
-            console.info(`Connecting to ${database} db on port ${port}`);
+            console.info(`Connecting to ${database} db on ${host}:${port}`);
 
             return {
                 username,
@@ -24,7 +24,7 @@ export const databaseConnections = [
                 autoLoadEntities: true,
                 type: 'postgres',
                 entities: [],
-                synchronize: false, // always run migrations for db changes
+                synchronize: false, // always run migrations for schema changes
             };
         },
     }),

@@ -2,14 +2,12 @@
  * Jest configuration file, see link for more information:
  * https://jestjs.io/docs/en/configuration
  *
- * @type { import("@jest/types").Config.InitialOptions }
+ * @type { import('@jest/types').Config.InitialOptions }
  */
 module.exports = {
     rootDir: '.',
     moduleFileExtensions: ['js', 'json', 'ts'],
-    testTimeout: 30000,
     testEnvironment: 'node',
-    testMatch: ['<rootDir>/specs/**/*.spec.ts'],
     transform: {
         '^.+\\.(t|j)s?$': 'ts-jest',
     },
@@ -23,4 +21,10 @@ module.exports = {
             },
         ],
     ],
+    testMatch: ['<rootDir>/specs/**/*.spec.ts'],
+    collectCoverageFrom: ['**/*.ts', '!demo.ts'],
+    testTimeout: 120000,
+    globalSetup: './setup/globalPostgresSetup.ts',
+    globalTeardown: './setup/globalPostgresTeardown.ts',
+    setupFilesAfterEnv: ['./setup/afterEnv.ts'],
 };
